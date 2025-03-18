@@ -10,7 +10,6 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <!-- Toolbar pegada al margen superior -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -19,7 +18,6 @@
         app:title="Geolocalización"
         app:titleTextColor="@color/white" />
 
-    <!-- Contenedor principal con peso para ocupar el espacio central -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -37,36 +35,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="24dp" />
 
-        <Button
-            android:id="@+id/btnObtenerCoordenadas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OBTENER COORDENADAS"
-            android:backgroundTint="@color/buttonColor"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="14dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"/>
-
-        <!-- Botón para ver el mapa -->
-        <Button
-            android:id="@+id/btnVerMapa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="VER MAPA"
-            android:backgroundTint="@color/buttonColor"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="14dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
-
-        <!-- CardView contenedor de datos -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             android:background="@color/white">
@@ -77,113 +49,126 @@
                 android:padding="32dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:divider="@color/lineColor"
-                    android:showDividers="middle"
-                    android:dividerPadding="8dp">
+                    android:text="Latitud:"
+                    android:textColor="@color/secondaryColor"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
 
-                    <!-- Latitud -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingBottom="16dp">
+                <TextView
+                    android:id="@+id/txtLatitud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00000"
+                    android:textColor="@color/textGray"
+                    android:textSize="20sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="Latitud:"
-                            android:textColor="@color/secondaryColor"
-                            android:textStyle="bold"
-                            android:textSize="20sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/textGray"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
 
-                        <TextView
-                            android:id="@+id/txtLatitud"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="00000"
-                            android:textColor="@color/textGray"
-                            android:textSize="20sp"/>
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Longitud:"
+                    android:textColor="@color/secondaryColor"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
 
-                    <!-- Longitud -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingBottom="16dp">
+                <TextView
+                    android:id="@+id/txtLongitud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00000"
+                    android:textColor="@color/textGray"
+                    android:textSize="20sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="Longitud:"
-                            android:textColor="@color/secondaryColor"
-                            android:textStyle="bold"
-                            android:textSize="20sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/textGray"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
 
-                        <TextView
-                            android:id="@+id/txtLongitud"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="00000"
-                            android:textColor="@color/textGray"
-                            android:textSize="20sp"/>
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección:"
+                    android:textColor="@color/secondaryColor"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
 
-                    <!-- Dirección -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txtDireccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sin dirección"
+                    android:textColor="@color/textGray"
+                    android:textSize="20sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="Dirección:"
-                            android:textColor="@color/secondaryColor"
-                            android:textStyle="bold"
-                            android:textSize="20sp"/>
-
-                        <TextView
-                            android:id="@+id/txtDireccion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sin dirección"
-                            android:textColor="@color/textGray"
-                            android:textSize="20sp"/>
-                    </LinearLayout>
-
-                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
-        <!-- Botón Compartir Ubicación en WhatsApp con un ImageView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnObtenerCoordenadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OBTENER COORDENADAS"
+                android:backgroundTint="@color/buttonColor"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:padding="14dp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnVerMapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VER MAPA"
+                android:backgroundTint="@color/buttonColor"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:padding="14dp"/>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/rounded_button"
-            android:padding="10dp">
+            android:layout_marginTop="16dp"
+            android:padding="2dp"
+            android:backgroundTint="@color/whatsappColor"
+            android:background="@drawable/rounded_button">
 
-            <!-- Ícono de WhatsApp -->
             <ImageView
                 android:id="@+id/imgWhatsapp"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@drawable/whatsapp"
                 android:contentDescription="Icono de WhatsApp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="16dp"
+                android:padding="4dp"/>
 
-            <!-- Botón Compartir -->
             <Button
                 android:id="@+id/btnCompartirUbicacion"
                 android:layout_width="wrap_content"
@@ -191,26 +176,17 @@
                 android:text="Compartir Ubicación"
                 android:background="@android:color/transparent"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:padding="0dp"/>
+                android:textSize="14sp"
+                android:padding="4dp"/>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="© 2025 - Geo Maps"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
     </LinearLayout>
-
-    <!-- Pie de página pegado al margen inferior -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="© 2025 - Geo Maps"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"/>
 </LinearLayout>
-
-
-
-
-
-
-
