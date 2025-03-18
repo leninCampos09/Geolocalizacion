@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#01796F</color>
+    <color name="secondaryColor">#046A60</color>
+    <color name="buttonColor">#0094FF</color>
+    <color name="textGray">#888888</color>
+    <color name="lineColor">#101010</color> <!-- Un gris suave -->
+    <color name="primaryDark">#0D47A1</color> <!-- Azul oscuro, puedes cambiarlo -->
+
+
+</resources>
